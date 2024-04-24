@@ -11,6 +11,17 @@ java {
 kotlin {
     jvm()
 
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach {
+        it.binaries.framework {
+            baseName = "Shared"
+            isStatic = true
+        }
+    }
+
     sourceSets {
         commonMain {
             dependencies {
@@ -24,6 +35,11 @@ kotlin {
         jvmMain {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
+            }
+        }
+        iosMain {
+            dependencies {
+                implementation(libs.ktor.client.darwin)
             }
         }
     }
