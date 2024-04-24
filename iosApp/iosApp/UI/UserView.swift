@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import Shared
 
 struct UserView: View {
     var user: User
@@ -116,5 +117,5 @@ private struct Star: Shape {
 }
 
 #Preview {
-    UserView(user: InMemoryRepository.users["avast"]!)
+    UserView(user: InMemoryRepository.companion.avast)
 }

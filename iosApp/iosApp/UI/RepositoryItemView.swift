@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Shared
 
 struct RepositoryItemView: View {
     var repository: GithubRepository
@@ -22,5 +23,5 @@ struct RepositoryItemView: View {
 }
 
 #Preview {
-    RepositoryItemView(repository: InMemoryRepository.repositories["avast"]![0])
+    RepositoryItemView(repository: InMemoryRepository.companion.AvastRepositories.first!)
 }

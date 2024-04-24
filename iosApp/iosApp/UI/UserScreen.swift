@@ -8,6 +8,7 @@
 
 import SwiftUI
 import os
+import Shared
 
 struct UserScreen: View {
     
