@@ -16,7 +16,11 @@ struct UserScreen: View {
         @Published var user: User? = nil
         @Published var repositories: [GithubRepository]? = [GithubRepository]()
         
-        let repository = NetworkRepository()
+        let repository: Repository
+        
+        init(repository: Repository) {
+            self.repository = repository
+        }
         
         func load(username: String) async {
             do {
@@ -28,7 +32,7 @@ struct UserScreen: View {
         }
     }
     
-    @StateObject private var viewModel = UserViewModel()
+    @StateObject private var viewModel = UserViewModel(repository: InMemoryRepository())
     var username: String = ""
 
     var body: some View {

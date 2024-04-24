@@ -71,6 +71,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.shared)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)

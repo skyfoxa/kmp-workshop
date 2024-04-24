@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.gendigital.mff.lecture7.data.GithubRepository
 import com.gendigital.mff.lecture7.data.User
 import com.gendigital.mff.lecture7.repository.Repository
+import com.gendigital.mff.lecture7.repository.memory.InMemoryRepository
 import com.gendigital.mff.lecture7.repository.network.NetworkRepository
 import com.gendigital.mff.lecture7.utils.ViewModelResponseState
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +18,7 @@ import kotlinx.coroutines.withContext
 class UserViewModel: ViewModel() {
 
     private val dataRepository: Repository by lazy {
-        NetworkRepository()
+        InMemoryRepository()
     }
 
     private val _userDetails: MutableStateFlow<ViewModelResponseState<UserData>> =

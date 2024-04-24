@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Github-app-7"
 include(":app")
+include(":shared")

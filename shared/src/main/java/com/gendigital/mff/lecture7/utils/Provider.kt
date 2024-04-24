@@ -1,6 +1,5 @@
 package com.gendigital.mff.lecture7.utils
 
-import com.gendigital.mff.lecture7.DebugHelper.addFlipperPlugin
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -24,7 +23,6 @@ object Provider {
             }
             install(Resources)
             engine {
-                addFlipperPlugin()
             }
 
             defaultRequest {

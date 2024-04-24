@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.ksp) apply false
 
     id("com.getkeepsafe.dexcount") version "4.0.0"
+    alias(libs.plugins.jetbrainsKotlinJvm) apply false
 }
