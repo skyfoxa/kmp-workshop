@@ -1,7 +1,7 @@
 package com.gendigital.mff.lecture7.utils
 
 import io.ktor.client.HttpClient
-import io.ktor.client.engine.okhttp.OkHttp
+import io.ktor.client.HttpClientConfig
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.resources.Resources
@@ -13,7 +13,7 @@ import kotlinx.serialization.json.Json
 object Provider {
 
     val client by lazy {
-        HttpClient(OkHttp) {
+        httpClient {
             install(ContentNegotiation) {
                 json(Json {
                     prettyPrint = true
@@ -35,3 +35,5 @@ object Provider {
         }
     }
 }
+
+expect fun httpClient(config: HttpClientConfig<*>.()-> Unit={}): HttpClient
