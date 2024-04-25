@@ -18,7 +18,7 @@ struct RepositoryScreenView: View {
                 .font(.title)
             Text(repository.owner.login)
                 .font(.subheadline)
-            Text(repository.description)
+            Text(repository.description_)
             Spacer()
         }.padding()
             .navigationTitle(repository.name)

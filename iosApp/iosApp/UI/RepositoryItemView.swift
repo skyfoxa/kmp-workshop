@@ -16,7 +16,7 @@ struct RepositoryItemView: View {
         VStack(alignment: .leading) {
             Text(repository.name)
                 .font(.title)
-            Text(repository.description)
+            Text(repository.description_)
                 .font(.subheadline)
         }.padding()
     }
